@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <title>tags - Hexo</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="什么是css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tags">
+<meta property="og:url" content="http://example.com/2019/08/13/day-02/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是css">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-08-13T01:39:50.000Z">
+<meta property="article:modified_time" content="2021-03-09T08:29:33.127Z">
+<meta property="article:author" content="BlackGarland">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1615362010409">
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-coy.css" type="text/css"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="BlackGarland" class="mdui-btn mdui-btn-icon"><img src="http://pic1.win4000.com/wallpaper/8/597948c99648d.jpg" alt="BlackGarland"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="BlackGarland">
+            <img src="http://pic1.win4000.com/wallpaper/8/597948c99648d.jpg" alt="BlackGarland" alt="BlackGarland">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>3</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=5CfKHun" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/160195236/" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 BlackGarland
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 62.5%;"> 
+          <img data-src="http://img.netbian.com/file/2021/0307/97b594cc5157ac57a65153a6ef1b0905.jpg" data-sizes="auto" alt="tags" class="lazyload">
+          <h1>tags</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月13日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3,046 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <p>什么是css</p>
+<a id="more"></a>
+<h1>1.什么是css</h1>
+<p>css是cascading style sheet,层叠样式表。html元素的外观是由样式属性值决定的，可以通过内联样式、内部样式、外部样式三种不同的方式来设置元素的样式属性值，如果一个元素同一个样式属性在多个不同的地方设置了值，最具体的位置样式属性值生效。</p>
+<p>我们可以在不同的位置来定义css,比如在元素的style属性、文档的style标签里、外部文档中</p>
+<p>使用样式文档的好处是样式和文件内容分离，提高效率</p>
+<h1>css语法</h1>
+<p>css的语法包括选择器和样式声明。</p>
+<p>选择器是用来描述哪些元素应该被应用后面声明的样式。</p>
+<p>样式声明部分指定元素应该对哪些样式属性设置新的值。</p>
+<h1>选择器mk</h1>
+<p>选择器是用来描述要应用样式的元素。</p>
+<p>每个html元素都有一个标签名，还可以有class属性，id属性，css选择器里有元素选择器、id选择器、class选择器</p>
+<ol>
+<li>如果一个选择器的名字是一个html标签名，那么这是一个元素选择器，他定义的样式会应用到和他名称相同的html元素上</li>
+<li>id选择器以#开头，作用于id属性和他名称相同的元素</li>
+<li>class选择器以.开头，作用于class属性包含他的名称的元素</li>
+</ol>
+<h1>盒模型</h1>
+<p>内容：width,height</p>
+<p>内填充：padding,padding-top,padding-right,padding-bottom,padding-left</p>
+<p>边框：border,border-top,border-right,border-bottom,border-left,border-style,border-width,border-color</p>
+<p>外填充：margin,margin-top,margin-right,margin-bottom,margin-left</p>
+<p>标准盒模型</p>
+<p>怪异盒模型（ie）</p>
+<h1>背景</h1>
+<ol>
+<li>background-color</li>
+<li>background-image
+<ol>
+<li>background-position</li>
+<li>background-repeat</li>
+<li>background-size</li>
+<li>background-orient</li>
+</ol>
+</li>
+</ol>
+<h1>文本</h1>
+<p>文本颜色：color</p>
+<p>文本对齐：text-align</p>
+<p>文本修饰：text-decoration</p>
+<p>字符间距：letter-space</p>
+<p>首行缩进：text-indent</p>
+<p>行与行之间的空间：line-height：百分比</p>
+<p>文本阴影：text-shadow:2px 2px #FF0000;</p>
+<p>行高：line-height</p>
+<p>文字居中：text-align: center;</p>
+<p>横线：<hr /></p>
+<p>文本域禁止拖拽：resine：none</p>
+<p>文本域中的字符串是从文本域的开始标签到结束标签统计的，包含空格</p>
+<h1>字体</h1>
+<p>font-family</p>
+<p>font-size</p>
+<p>font-weight</p>
+<p>font-style</p>
+<h1>使用”伪类“超链接的样式</h1>
+<p>超链接有四种状态：正常、鼠标悬浮、鼠标按下、访问过</p>
+<p>可以通过伪类来给这四种状态分别设置样式</p>
+<p>l:link:连接</p>
+<p>v:visited,访问过</p>
+<p>h:hover,鼠标悬浮</p>
+<p>a:active,鼠标按下</p>
+<h1>元素的显示方式</h1>
+<p>在css中，万物皆块，display的值决定了这个块有不同的特性,同一个元素可以通过设置display的值来在去不同的显示方式中切换</p>
+<p>display:</p>
+<ul>
+<li>
+<p>none,不显示</p>
+</li>
+<li>
+<p>block,块级元素，单独占有一行，可以设置宽高,h1-h6,p,div,ul,ol,li,dl,dt,dd等的display值都是block</p>
+</li>
+<li>
+<p>inline,行内元素，可以和其他行内元素共处一行，不能设置宽高,span,a,img,i,input,select,textarea等都是inline元素</p>
+</li>
+<li>
+<p>inline-block,行内块元素，可以和其他行内块元素及行内元素共处一行，可以设置宽高</p>
+</li>
+<li>
+<p>flex,弹性盒子</p>
+<h5 id="隐藏和显示">隐藏和显示</h5>
+<p>&amp;1.display：none 隐藏元素，不保留位置</p>
+<p>​	display:block 显示</p>
+<p>&amp;2.visibility：hidden 隐藏元素，保留位置</p>
+<p>​	visibility：visiable 显示</p>
+<p><strong>溢出隐藏</strong>：</p>
+<p>&amp;1.overflow：hidden 直接隐藏</p>
+<p>&amp;2.overflow：scroll 屏幕滚动方式隐藏</p>
+<p>&amp;3.overflow:  auto 自动隐藏-自动适应当前盒子的大小</p>
+<p>溢出内容省略号：</p>
+<p>&amp;1.设置不强制换行（取消自动换行）</p>
+<p>​	white-space：nowrap</p>
+<p>&amp;2.隐藏超出的文本</p>
+<p>overflow：hidden</p>
+<p>&amp;3.溢出部分替换成</p>
+<p>text-overflow：ellipsis</p>
+</li>
+</ul>
+<h1>浮动</h1>
+<p>元素可以浮动</p>
+<p>如果一个元素浮动后，那么对他后面的元素有影响，对前面的元素没有影响</p>
+<p>一个块级元素的宽默认是父元素的宽，高默认是由子元素撑起来的。一个行内元素的宽和高是由他的内容决定。</p>
+<p>一个块级元素的子元素要是浮动了，那么他还会撑起父元素的高吗？</p>
+<p>标准文档流-就是一个概念，也称为普通流。实际上就是表示网页中标签内容是从上往下，从左往右的顺序进行解析的，比如说块级元素是独占一行或者<br>
+是多行，行内元素不独占一行，这些解析会按照一定的顺序要求进行解析，这个前提下不发生意外，就是标准文档流。<br>
+<strong>特征</strong>：<br>
+1.默认情况下，网页是从上往下，从左往右的顺序解析<br>
+2.会出现空白折叠，比如有多个空格，如果不设置 会被折叠<br>
+3.图片，文字高度不等，但是底部是对齐的<br>
+4.行内元素和块级元素只有在标准文档流中才区分，如果脱离了文档流，那么就可以设置宽高。-重点<br>
+5.自动换行 - 当默认页面宽度不足以显示的时候会自动换行</p>
+<p><strong>浮动</strong>：<br>
+其实就是脱离文档流，为了布局的设定。-所有的元素只要是设定可浮动，那么就是脱离文档流。<br>
+浮动只有左浮动和右浮动<br>
+语法：float: left/right;</p>
+<p><strong>网页布局</strong>：<br>
+1.布局流程：<br>
+把网页中的元素（文字，图像，视频，音频等等）看成是一个个的小盒子，放到网页(大盒子)中，然后利用css进行样式的设置，这样的过程就是<br>
+布局排版。<br>
+css中没有太多的逻辑，类似于搭积木，我们一般会遵循主流的布局。在做网站之前会去分析主流的网站架构。<br>
+2.版心：<br>
+其实就是一个可视区，是指网页中的主图内容所在的位置，最显眼的。比如说banner<br>
+课共选择的宽度：100px，1200px，1360px<br>
+3.布局的步骤：<br>
+确定版心的位置（可视区）<br>
+分析页面的架构 - 行内元素和块级元素<br>
+制作html<br>
+css样式处理<br>
+4.介绍几种主流的（经典的）布局：<br>
+一列固定宽度且居中 - 了解（经典，过时）- 个人博客类型的网站<br>
+两列左窄右宽型 - 小米官网，淘宝<br>
+通栏平均分布型 - 苹果，锤子官网</p>
+<h1>定位</h1>
+<p>在html中，元素的关系是父子关系和兄弟关系。浏览器是按照元素出现的嵌套关系和先后的关系来渲染页面元素。这样的一个渲染的过程就是文档流。</p>
+<p>一个元素在页面上的位置和他与其他元素的关系有关。有的时候需要将一个元素的位置进行特殊的定位，需要使用position属性。</p>
+<p>position的值</p>
+<ol>
+<li>static:是默认值，在文档流中就是这个值。</li>
+<li>relative：相对自身原来的位置定位,这个元素没有脱离文档路I，对文档流中其他的元素没有影响</li>
+<li>fixed：相对浏览器窗口来定位,脱离了文档流</li>
+<li>absolute：相对第一个已经定位（position属性值不是static）的祖先元素定位，脱离文档流
+<ol>
+<li>如果没有祖先元素定位，就会相对浏览器窗口定位</li>
+<li>如果有祖先元素使用了定位，就会相对第一个（从内到外）使用了定位的祖先元素定位</li>
+</ol>
+</li>
+</ol>
+<p>在已经使用了position属性后，使用top,right,bottom,left来完成定位。</p>
+<p><strong>层叠次序设置z-index</strong></p>
+<p>&amp;1.值没有单位</p>
+<p>&amp;2.两个值相等，则根据书写顺序，后面的居上</p>
+<p>&amp;3.只有相对定位、绝对定位、固定定位有这个属性</p>
+<h1></h1>
+<h1>表格细边框</h1>
+<p>table{  border-collapse: collapse;  }  边框塌陷</p>
+<p>table,th,td{  border:1px,solid,black;  }</p>
+<h1>边框圆角</h1>
+<p>border-radious：20px 40px</p>
+<p>左上右下和左下右上</p>
+<p>border-radious可以大于50%但是不用设大于50%；50%把正方形变成圆。</p>
+<h3 id="后代选择器和子元素选择器">后代选择器和子元素选择器</h3>
+<p>后代选择器（descendant selector）又称为包含选择器。 　　后代选择器可以选择作为某元素后代的元素。</p>
+<p>与后代选择器相比，子元素选择器（Child selectors）只能选择作为某元素子元素的元素。 　　如果您不希望选择任意的后代元素，而是希望缩小范围，只选择某个元素的子元素，请使用子元素选择器（Child selector）。</p>
+<p>h1&gt; em {color:red;}\</p>
+<h1>轮廓线的设置</h1>
+<p>ouutline：none 取消原来的轮廓线</p>
+<p>例：outline:green dotted thick; 轮廓绿色、斑点、加粗</p>
+<p>*各种风格的线</p>
+<p>dotted&quot;&gt;点线轮廓<br>
+dashed虚线轮廓<br>
+solid实线轮廓<br>
+double双线轮廓<br>
+groove凹槽轮廓<br>
+ridge垄状轮廓<br>
+nset嵌入轮廓<br>
+outset外凸轮廓</p>
+<h1>浮动的特性</h1>
+<p>1.子元素会在父元素的原始宽高范围内</p>
+<p>2.父盒子设置内边距不会影响元素的浮动</p>
+<h4 id="清除浮动的方法">清除浮动的方法</h4>
+<p><strong>额外标签法清除浮动</strong>：在最后一个设置浮动的元素后面添加一个空的标签（额外的），设置清除浮动的选择器。</p>
+<p>清除浮动：clear:both</p>
+<p>清除浮动之后的父元素的高度以最高的那个子元素的高度为准。</p>
+<p>*祖先元素添加高度可以避免浮动元素重叠</p>
+<p><strong>overflow方式清除浮动</strong>，在父元素上设置overflow属性，谁影响布局，谁就设置这个属性</p>
+<p>&amp;1搞清楚什么元素影响布局</p>
+<p>&amp;2在这个元素的父元素上设置overflow：hidden</p>
+<p>通常可以认为在设置浮动的元素的父元素上设置overflow:hidden;</p>
+<p><strong>after伪元素清除浮动</strong>：利用伪元素选择器来设置清除浮动。</p>
+<p>例：</p>
+<p>.clearfix：after{</p>
+<p>content：“”;  /必须写</p>
+<p>display:block;</p>
+<p>clear:both;</p>
+<p>visibility:hidden;</p>
+<p>}</p>
+<p>/兼容ie6浏览器代码</p>
+<p>.clearfix{</p>
+<p>*zoom:1;</p>
+<h1>鼠标样式</h1>
+<p>1.默认-白色箭头cursor：default</p>
+<p>2.链接方式-小白手cursor:pointer</p>
+<p>3.拖拽模式-十字架cursor：move</p>
+<p>4.文本模式-文本变成I cursor：text</p>
+<p>}</p>
+<h1>精灵图</h1>
+<p>​				/<em>1.通过工具获取当前这个小图标的位置 - 设置为负数</em>/<br>
+​				background: url(…/img/index.png) no-repeat -2px -183px;<br>
+​				/<em>2.将当前的小图标的宽高位置写上去</em>/<br>
+​				width: 27px;<br>
+​				height: 30px;</p>
+<p>*****<strong>px是像素单位，em是相对单位，pt是绝对单位</strong></p>
+<h2 id="所有CSS-尺寸-Dimension-属性">所有CSS 尺寸 (Dimension)属性</h2>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-height.html">height</a></td>
+<td>设置元素的高度。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-line-height.html">line-height</a></td>
+<td>设置行高。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-max-height.html">max-height</a></td>
+<td>设置元素的最大高度。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-max-width.html">max-width</a></td>
+<td>设置元素的最大宽度。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-min-height.html">min-height</a></td>
+<td>设置元素的最小高度。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-min-width.html">min-width</a></td>
+<td>设置元素的最小宽度。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-width.html">width</a></td>
+<td>设置元素的宽度。</td>
+</tr>
+</tbody>
+</table>
+<h1>伪元素</h1>
+<p><strong>1.:first-line 伪元素</strong></p>
+<p>“first-line” 伪元素用于向文本的首行设置特殊样式。</p>
+<p><strong>注意：</strong>“first-line” 伪元素只能用于块级元素。</p>
+<p><strong>注意：</strong> 下面的属性可应用于 “first-line” 伪元素：</p>
+<ul>
+<li>
+<p>font properties</p>
+</li>
+<li>
+<p>color properties</p>
+</li>
+<li>
+<p>background properties</p>
+</li>
+<li>
+<p>word-spacing</p>
+</li>
+<li>
+<p>letter-spacing</p>
+</li>
+<li>
+<p>text-decoration</p>
+</li>
+<li>
+<p>vertical-align</p>
+</li>
+<li>
+<p>text-transform</p>
+</li>
+<li>
+<p>line-height</p>
+</li>
+<li>
+<p>clear</p>
+<p><strong>2.:first-letter 伪元素</strong></p>
+<p>“first-letter” 伪元素用于向文本的首字母设置特殊样式：</p>
+<p><strong>注意：</strong> “first-letter” 伪元素只能用于块级元素。</p>
+<p><strong>注意：</strong> 下面的属性可应用于 “first-letter” 伪元素：</p>
+<ul>
+<li>
+<p>font properties</p>
+</li>
+<li>
+<p>color properties</p>
+</li>
+<li>
+<p>background properties</p>
+</li>
+<li>
+<p>margin properties</p>
+</li>
+<li>
+<p>padding properties</p>
+</li>
+<li>
+<p>border properties</p>
+</li>
+<li>
+<p>text-decoration</p>
+</li>
+<li>
+<p>vertical-align (only if “float” is “none”)</p>
+</li>
+<li>
+<p>text-transform</p>
+</li>
+<li>
+<p>line-height</p>
+</li>
+<li>
+<p>float</p>
+</li>
+<li>
+<p>clear</p>
+<h2 id="所有CSS伪类-元素">所有CSS伪类/元素</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选择器</th>
+<th style="text-align:left">示例</th>
+<th style="text-align:left">示例说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-link.html">:link</a></td>
+<td style="text-align:left">a:link</td>
+<td style="text-align:left">选择所有未访问链接</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-visited.html">:visited</a></td>
+<td style="text-align:left">a:visited</td>
+<td style="text-align:left">选择所有访问过的链接</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-active.html">:active</a></td>
+<td style="text-align:left">a:active</td>
+<td style="text-align:left">选择正在活动链接</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-hover.html">:hover</a></td>
+<td style="text-align:left">a:hover</td>
+<td style="text-align:left">把鼠标放在链接上的状态</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-focus.html">:focus</a></td>
+<td style="text-align:left">input:focus</td>
+<td style="text-align:left">选择元素输入后具有焦点</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-firstletter.html">:first-letter</a></td>
+<td style="text-align:left">p:first-letter</td>
+<td style="text-align:left">选择每个<p> 元素的第一个字母</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-firstline.html">:first-line</a></td>
+<td style="text-align:left">p:first-line</td>
+<td style="text-align:left">选择每个<p> 元素的第一行</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-firstchild.html">:first-child</a></td>
+<td style="text-align:left">p:first-child</td>
+<td style="text-align:left">选择器匹配属于任意元素的第一个子元素的 <p> 元素</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-before.html">:before</a></td>
+<td style="text-align:left">p:before</td>
+<td style="text-align:left">在每个<p>元素之前插入内容</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-after.html">:after</a></td>
+<td style="text-align:left">p:after</td>
+<td style="text-align:left">在每个<p>元素之后插入内容</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-lang.html">:lang(<em>language</em>)</a></td>
+<td style="text-align:left">p:lang(it)</td>
+<td style="text-align:left">为<p>元素的lang属性选择一个开始值</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="边框阴影">边框阴影</h5>
+<p>boxshadow</p>
+<h5 id="元素高度不一致">元素高度不一致</h5>
+<p>指定基准线：</p>
+<p>vertical-align: top; 指定基准线高度为顶部</p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>BlackGarland<br>
+    <strong>Link：</strong><a href="http://example.com/2019/08/13/day-02/" title="http:&#x2F;&#x2F;example.com&#x2F;2019&#x2F;08&#x2F;13&#x2F;day-02&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2019&#x2F;08&#x2F;13&#x2F;day-02&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+  </div>
+</div>
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool">
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ <script src="/js/app.js?v=1615362010409"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haru02.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
