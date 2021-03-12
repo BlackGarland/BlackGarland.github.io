@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>Archive：2020 - Hexo</title>
+  <title>组件props的children属性基本用法 - Hexo</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,17 +12,21 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2020/index.html">
+  <meta name="description" content="children属性表示React组件标签的子节点，children属性与props属性一样，值可以是文本、React元素、组件、函数等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组件props的children属性基本用法">
+<meta property="og:url" content="http://example.com/2019/09/11/%E7%BB%84%E4%BB%B6props%E7%9A%84children%E5%B1%9E%E6%80%A7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="children属性表示React组件标签的子节点，children属性与props属性一样，值可以是文本、React元素、组件、函数等。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-09-11T03:24:36.000Z">
+<meta property="article:modified_time" content="2021-03-11T10:37:29.117Z">
 <meta property="article:author" content="BlackGarland">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1615530498391">
+  <link rel="stylesheet" href="/css/style.css?v=1615530498381">
 <meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-coy.css" type="text/css"></head>
 
 <body class="mdui-drawer-body-left">
@@ -112,80 +116,92 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        <section class="nexmoe-posts">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 62.5%;"> 
+          <img data-src="https://pic.netbian.com/uploads/allimg/210129/164812-1611910092746d.jpg" data-sizes="auto" alt="组件props的children属性基本用法" class="lazyload">
+          <h1>组件props的children属性基本用法</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2019年09月11日</a>
+    <a><i class="nexmoefont icon-areachart"></i>127 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
     
-    <div class="nexmoe-post">
-        <a href="/2020/08/01/react%E8%B7%AF%E7%94%B1%E4%BC%A0%E5%8F%82/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 62.5%;"> 
-                    <img data-src="http://img.netbian.com/file/2021/0307/97b594cc5157ac57a65153a6ef1b0905.jpg" data-sizes="auto" alt="tags" class="lazyload">
-                    <h1>tags</h1>
-                </div>
-            
-        </a>
+  </div>
 
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年08月01日</a>
-            <a><i class="nexmoefont icon-areachart"></i>492 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-        </div>
+  <article>
+    <p>children属性表示React组件标签的子节点，children属性与props属性一样，值可以是文本、React元素、组件、函数等。</p>
+<a id="more"></a>
+<p>children属性表示React组件标签的子节点，children属性与props属性一样，值可以是文本、React元素、组件、函数等。</p>
+<pre><code>const App = (props) =&gt; &#123;
+  return (
+    &lt;div&gt;
+      &lt;div style=&#123;&#123;color:'red'&#125;&#125;&gt;我是父组件&lt;/div&gt;
+      &#123;props.children&#125;
+    &lt;/div&gt;
+  )
+&#125;
 
-        <article>
-            
-                <p>react路由传参的几种方式</p>
-            
-        </article>
-    </div>
+class Hello extends React.Component &#123;
+    render() &#123;
+    console.log(this.props);
+        return (
+            &lt;div&gt;
+            &lt;children&gt;
+                &lt;div&gt;我是一个组件&lt;/div&gt;
+             &lt;/children&gt;    
+            &lt;/div&gt;
+        )
+    &#125;
+&#125;
+export default App
+</code></pre>
+<p>在这里，APP是父组件，Hello是子组件</p>
+
+  </article>
+
+  
     
-    <div class="nexmoe-post">
-        <a href="/2020/03/01/react%E5%AE%9A%E6%97%B6%E5%99%A8/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 62.5%;"> 
-                    <img data-src="http://img.netbian.com/file/2021/0307/bc442e8f1441dc453eca16ec5b838e36.jpg" data-sizes="auto" alt="React定时器" class="lazyload">
-                    <h1>React定时器</h1>
-                </div>
-            
-        </a>
-
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月01日</a>
-            <a><i class="nexmoefont icon-areachart"></i>703 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
-        </div>
-
-        <article>
-            
-                <p>关于毕业设计中简单的react定时器的理解，参考了部分其他人的方案，附上自己的理解。</p>
-            
-        </article>
-    </div>
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>BlackGarland<br>
+    <strong>Link：</strong><a href="http://example.com/2019/09/11/%E7%BB%84%E4%BB%B6props%E7%9A%84children%E5%B1%9E%E6%80%A7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="http:&#x2F;&#x2F;example.com&#x2F;2019&#x2F;09&#x2F;11&#x2F;%E7%BB%84%E4%BB%B6props%E7%9A%84children%E5%B1%9E%E6%80%A7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2019&#x2F;09&#x2F;11&#x2F;%E7%BB%84%E4%BB%B6props%E7%9A%84children%E5%B1%9E%E6%80%A7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95&#x2F;</a><br>
     
-    <div class="nexmoe-post">
-        <a href="/2020/01/20/AJAX%E8%B7%A8%E5%9F%9F/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 62.5%;"> 
-                    <img data-src="https://pic.netbian.com/uploads/allimg/210310/212628-16153827880f75.jpg" data-sizes="auto" alt="AJAX跨域" class="lazyload">
-                    <h1>AJAX跨域</h1>
-                </div>
-            
-        </a>
-
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月20日</a>
-            <a><i class="nexmoefont icon-areachart"></i>1,725 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
-        </div>
-
-        <article>
-            
-                <p>同源策略是浏览器的一种安全策略，所谓同源是指  <strong>域名，协议，端口完全相同</strong> ，只有同源的地址才可以相互通过AJAX 的方式请求。<br>
-同源或者不同源说的是两个地址之间的关系，不同源地址之间请求我们称之为跨域请求</p>
-            
-        </article>
-    </div>
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
     
+  </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
+</script>
 </section>
-
+  </div>
+</div>
         <div class="nexmoe-post-right">
           <div class="nexmoe-fixed">
             <div class="nexmoe-tool">
@@ -205,7 +221,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1615530498391"></script>
+ <script src="/js/app.js?v=1615530498382"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>

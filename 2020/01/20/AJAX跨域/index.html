@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <title>AJAX跨域 - Hexo</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="同源策略是浏览器的一种安全策略，所谓同源是指  域名，协议，端口完全相同 ，只有同源的地址才可以相互通过AJAX 的方式请求。 同源或者不同源说的是两个地址之间的关系，不同源地址之间请求我们称之为跨域请求">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX跨域">
+<meta property="og:url" content="http://example.com/2020/01/20/AJAX%E8%B7%A8%E5%9F%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="同源策略是浏览器的一种安全策略，所谓同源是指  域名，协议，端口完全相同 ，只有同源的地址才可以相互通过AJAX 的方式请求。 同源或者不同源说的是两个地址之间的关系，不同源地址之间请求我们称之为跨域请求">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-20T02:14:45.000Z">
+<meta property="article:modified_time" content="2021-03-11T08:20:54.575Z">
+<meta property="article:author" content="BlackGarland">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1615530498375">
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-coy.css" type="text/css"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="BlackGarland" class="mdui-btn mdui-btn-icon"><img src="http://pic1.win4000.com/wallpaper/8/597948c99648d.jpg" alt="BlackGarland"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="BlackGarland">
+            <img src="http://pic1.win4000.com/wallpaper/8/597948c99648d.jpg" alt="BlackGarland" alt="BlackGarland">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>7</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=5CfKHun" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/160195236/" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 BlackGarland
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 62.5%;"> 
+          <img data-src="https://pic.netbian.com/uploads/allimg/210310/212628-16153827880f75.jpg" data-sizes="auto" alt="AJAX跨域" class="lazyload">
+          <h1>AJAX跨域</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月20日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1,725 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <p>同源策略是浏览器的一种安全策略，所谓同源是指  <strong>域名，协议，端口完全相同</strong> ，只有同源的地址才可以相互通过AJAX 的方式请求。<br>
+同源或者不同源说的是两个地址之间的关系，不同源地址之间请求我们称之为跨域请求</p>
+<a id="more"></a>
+<p>同源策略是浏览器的一种安全策略，所谓同源是指  <strong>域名，协议，端口完全相同</strong> ，只有同源的地址才可以相互通过AJAX 的方式请求。<br>
+同源或者不同源说的是两个地址之间的关系，不同源地址之间请求我们称之为跨域请求</p>
+<h2 id="1-跨域">1.跨域</h2>
+<h3 id="1-1-相关概念">1.1. 相关概念</h3>
+<pre><code>http://api.example.com/detail.html 不同源 域名不同
+https://www.example.com/detail.html 不同源 协议不同
+http://www.example.com:8080/detail.html 不同源 端口不同
+http://api.example.com:8080/detail.html 不同源 域名、端口不同
+https://api.example.com/detail.html 不同源 协议、域名不同
+https://www.example.com:8080/detail.html 不同源 端口、协议不同
+http://www.example.com/other.html 同源 只是目录不同
+</code></pre>
+<pre class=" language-language-javascript"><code class="language-language-javascript"><script>
+    // 当前页面访问地址：http://day-12.io/11-cross-domain.html
+    // 希望被AJAX的地址：http://locally.uieee.com/categories
+    // 这两个地址之间 协议相同 端口相同 域名不同 所以是两个不同源的地址
+    // 同源策略指的就是：不同源地址之间，默认不能相互发送AJAX请求
+
+    // 不同源地址之间如果需要相互请求，必须服务端和客户端配合才能完成
+    $.get('http://locally.uieee.com/categories', function (res) &#123;
+  	  console.log(res)
+	&#125;)
+	//No 'Access-Control-Allow-Origin' header is present on the requested resource
+</script>
+</code></pre>
+<h3 id="1-2-解决方案">1.2. 解决方案</h3>
+<pre><code>现代化的 Web 应用中肯定会有不同源的现象，所以必然要解决这个问题，从而实现跨域请求。
+</code></pre>
+<h4 id="1-2-1-发送跨域请求的方式">1.2.1 发送跨域请求的方式</h4>
+<pre class=" language-language-javascript"><code class="language-language-javascript">##1. img
+// 可以发送不同源地址之间的请求
+// 无法拿到响应结果
+var img = new Image()
+img.src = 'http://locally.uieee.com/categories'
+
+## 2. link
+// 可以发送不同源地址之间的请求
+// 无法拿到响应结果
+var link = document.createElement('link')
+link.rel = 'stylesheet'
+link.href = 'http://locally.uieee.com/categories'
+document.body.appendChild(link)
+
+## 3. script
+// 可以发送不同源地址之间的请求
+// 能够借助js的回调间接拿到结果
+var script = document.createElement('script')
+script.src = 'http://localhost/time2.php'
+document.body.appendChild(script) // 开始发起请求
+
+// 相当于请求的回调
+function foo (res) &#123;
+    console.log(res)
+&#125;
+
+//time2.php
+<?php
+header('Content-Type: application/javascript');
+$json = json_encode(array(
+  'time' => time()
+));
+// 在 JSON 格式的字符串外面包裹了一个函数的调用，
+// 返回的结果就变成了一段 JS 代码
+echo "foo(&#123;$json&#125;)";
+</code></pre>
+<h4 id="1-2-1-JSONP">1.2.1. JSONP</h4>
+<pre><code>JSON with Padding，是一种借助于 script 标签发送跨域请求的技巧。
+其原理就是在客户端借助 script 标签请求服务端的一个动态网页（php 文件），服务端的这个动态网页返回一段带有函数调用的 JavaScript 全局函数调用的脚本，将原本需要返回给客户端的数据传递进去。
+以后绝大多数情况都是采用 JSONP 的手段完成不同源地址之间的跨域请求
+</code></pre>
+<pre class=" language-language-javascript"><code class="language-language-javascript">//客户端 http://www.zce.me/users-list.html
+<script>
+	function foo(msg)&#123; console.log(msg) &#125;	
+</script>
+<script src="http://localhost:3000/testJsonP"></script>
+
+    
+## script标签中的async表示异步的意思，但是在使用JSONP的时候不论有没有用异步，都建议将带有回调方法的js写在jsonp的js代码之前，以保证结果回来之后请求的回调函数已经存在。
+</code></pre>
+<pre class=" language-language-php"><code class="language-language-php">//server 返回的结果
+app.get("/testJsonP",function(req,res)&#123;
+	 res.header("Content-Type", "application/javascript");
+	 res.end("foo(['我', '是', '你', '原', '本', '需', '要', '的', '数', '据'])");
+&#125;)
+</code></pre>
+<pre><code>总结一下：由于 XMLHttpRequest 无法发送不同源地址之间的跨域请求，所以我们必须要另寻他法，script 这种方案就是我们最终选择的方式，我们把这种方式称之为 JSONP。
+</code></pre>
+<pre class=" language-language-javascript"><code class="language-language-javascript">//JSONP存在的问题：
+1.JSONP需要服务端配合，服务端按照客户端的要求返回一段JavaScript调用客户端的函数
+2.只能发送GET请求
+
+注意：JSONP用的是script标签，和AJAX提供的XMLHttpRequest没有任何关系！！！
+</code></pre>
+<h4 id="1…2-3-为每次请求创建一个函数">1…2.3.为每次请求创建一个函数</h4>
+<pre class=" language-language-javascript"><code class="language-language-javascript">##1.客户端
+var funcName = 'haha_' + Date.now() + Math.random().toString().substr(2, 5)
+var script = document.createElement('script')
+script.src = 'http://localhost:3000/testJsonP?callback=' + funcName
+document.body.appendChild(script)
+
+window[funcName] = function (data) &#123;
+     console.log('1111', data)
+&#125;
+
+##2.服务端  server.js
+app.get("/testJsonP",function(req,res)&#123;
+	 var callback = req.query.callback;
+	 var data = "['我', '是', '你', '原', '本', '需', '要', '的', '数', '据']";
+	 if (!callback) &#123;
+	 	 res.header("Content-Type", "application/json; charset=utf-8");
+	 	 res.end(JSON.stringify(data))
+	 &#125;
+	 console.log(callback);
+	 res.header("Content-Type", "application/javascript");
+	 res.end(`typeof $&#123;callback&#125; === 'function' && $&#123;callback&#125;($&#123;data&#125;)`);;
+&#125;)
+</code></pre>
+<h4 id="1-2-4-JSONP的封装">1.2.4 JSONP的封装</h4>
+<pre class=" language-language-javascript"><code class="language-language-javascript">function jsonp (url, params, callback) &#123;
+    //随机生成一个方法
+    var funcName = 'jsonp_' + Date.now() + Math.random().toString().substr(2, 5)
+    
+    if (typeof params === 'object') &#123;
+        var tempArr = []
+        for (var key in params) &#123;
+            var value = params[key]
+            tempArr.push(key + '=' + value)
+        &#125;
+        params = tempArr.join('&')
+    &#125;
+
+    var script = document.createElement('script')
+    script.src = url + '?' + params + '&callback=' + funcName
+    document.body.appendChild(script)
+
+    window[funcName] = function (data) &#123;
+        callback(data)
+        delete window[funcName]
+        document.body.removeChild(script)
+    &#125;
+&#125;
+
+jsonp('http://localhost:3000/testJsonP', &#123; id: 123 &#125;, function (res) &#123;
+    console.log(res)
+&#125;)
+
+jsonp('http://localhost:3000/testJsonP', &#123; id: 123 &#125;, function (res) &#123;
+    console.log(res)
+&#125;)
+</code></pre>
+<h4 id="1-2-5-jQuery-中使用-JSONP-就是将-dataType-设置为-jsonp">1.2.5 jQuery 中使用 JSONP 就是将 dataType 设置为 jsonp</h4>
+<pre class=" language-language-javascript"><code class="language-language-javascript">##1.发送ajax请求
+<script>
+	  $.ajax(&#123;
+        url: 'http://localhost:3000/finduser',
+        dataType: 'jsonp',
+        success: function (res) &#123;
+            console.log(res)
+        &#125;
+    &#125;)
+</script>
+
+##2.server.js
+app.get("/finduser",function(req,res)&#123;
+	 var callback = req.query.callback;
+	 var data = '[&#123;name:"张三",gender:"男"&#125;,&#123;name:"李四",gender:"女"&#125;]';
+	 if (!callback) &#123;
+	 	 res.header("Content-Type", "application/json; charset=utf-8");
+	 	 res.end(data)
+	 &#125;
+	 console.log(callback);
+	 res.header("Content-Type", "application/javascript");
+	 res.end(`typeof $&#123;callback&#125; === 'function' && $&#123;callback&#125;($&#123;data&#125;)`);;
+&#125;)
+
+##3.注意点，jquery中可以自定义等号后的回调函数的名字以及等号前面的参数名字
+ 1.jsonp:'cb',  jsonp属性的作用就是自定义参数名字（callback=abc 这里的名字指的是等号前面的键，后端根据这个键获取方法名，jquery的默认参数名称是callback）
+ 2.jsonpCallback:'abc',  这个属性的作用就是自定义回调函数的名字（callback=abc ，这里的名字指的是等号后面的值）
+</code></pre>
+<h4 id="1-2-7-CORS">1.2.7. CORS</h4>
+<pre><code>Cross Origin Resource Share，跨域资源共享。这种方案无需客户端作出任何变化（客户端不用改代码），只是在被请求的服务端响应的时候添加一个 Access- Control-Allow-Origin 的响应头，表示这个资源是否允许指定域请求。
+</code></pre>
+<pre class=" language-language-php"><code class="language-language-php">//服务端代码	
+app.all('*', function(req, res, next) &#123;
+    console.log(req.method);
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Headers', 'Content-type');
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS,PATCH");
+    res.header('Access-Control-Max-Age',6000);//预请求缓存10分钟
+    next();  
+&#125;);
+
+//https://blog.csdn.net/superdangbo/article/details/82685694
+浏览器的同源策略，就是出于安全考虑，浏览器会限制从脚本发起的跨域HTTP请求（比如异步请求GET, POST, PUT, DELETE, OPTIONS等等），所以浏览器会向所请求的服务器发起两次请求，第一次是浏览器使用OPTIONS方法发起一个预检请求，第二次才是真正的异步请求，第一次的预检请求获知服务器是否允许该跨域请求：如果允许，才发起第二次真实的请求；如果不允许，则拦截第二次请求。
+Access-Control-Max-Age用来指定本次预检请求的有效期，单位为秒，，在此期间不用发出另一条预检请求。
+例如：
+resp.addHeader("Access-Control-Max-Age", "0")，表示每次异步请求都发起预检请求，也就是说，发送两次请求。
+resp.addHeader("Access-Control-Max-Age", "1800")，表示隔30分钟才发起预检请求。也就是说，发送两次请求
+</code></pre>
+<pre class=" language-language-php"><code class="language-language-php">//客户端代码
+$.get('http://localhost:3000/testcors', &#123;&#125;, function (res) &#123;
+	console.log(res) 
+&#125;)
+</code></pre>
+<h2 id=""></h2>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>BlackGarland<br>
+    <strong>Link：</strong><a href="http://example.com/2020/01/20/AJAX%E8%B7%A8%E5%9F%9F/" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;01&#x2F;20&#x2F;AJAX%E8%B7%A8%E5%9F%9F&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;01&#x2F;20&#x2F;AJAX%E8%B7%A8%E5%9F%9F&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+  </div>
+</div>
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool">
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ <script src="/js/app.js?v=1615530498376"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haru02.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
